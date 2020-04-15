@@ -90,10 +90,12 @@ ul.pagination {
   margin-top: 0;
 
   img {
-    height: 1.5em;
+    position: relative;
+    top: -1px;
+    height: 30px;
     width: auto;
+    margin-right: 5px;
     vertical-align: middle;
-    margin-right: $padding-8;
   }
 }
 
@@ -143,6 +145,7 @@ ul.pagination {
 
 .book-page {
   min-width: $body-min-width;
+  max-width: $body-max-width;
   flex-grow: 1;
   padding: $padding-16;
 }
