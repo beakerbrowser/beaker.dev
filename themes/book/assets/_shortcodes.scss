@@ -116,6 +116,9 @@
 
   .linkcard img {
     width: 200px;
+    height: 100px;
+    object-fit: cover;
+    object-position: top;
     border-right: 1px solid $gray-300;
     margin-right: 30px;
   }
