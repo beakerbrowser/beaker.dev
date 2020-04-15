@@ -1,0 +1,11 @@
+{{ $ref := "" }}
+{{ with .Get "href" }}
+  {{ $ref = . }}
+{{ end }}
+{{ with .Get "relref" }}
+  {{ $ref = relref $ . }}
+{{ end }}
+<a href="{{ $ref }}" class="linkcard">
+  <img src="{{ .Get "img" }}">
+  <span>{{ $.Inner }}</span>
+</a>
