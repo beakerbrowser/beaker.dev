@@ -130,6 +130,15 @@ customElements.define('page-content', class extends HTMLElement {
 
     console.debug('Page found:', file)
     if (!file) {
+      let st = await beaker.hyperdrive.stat('/users').catch(e => undefined)
+      if (!st) {
+        // no authors yet
+        main.classList.remove('loading')
+        main.append(h('h2', 'Welcome to your Wiki'))
+        main.append(h('p', 'To get started, add yourself as an author. You will then be able to edit pages.'))
+        return
+      }
+
       // 404
       main.classList.remove('loading')
       main.append(h('h2', '404 Not Found'))

@@ -8,7 +8,6 @@
 <script>
   const TEMPLATE_ROOT = '/templates/multiuser-wiki'
   window.TEMPLATE_FILES = [
-    '/index.html',
     '/ui/ui.html',
     '/ui/ui.js',
     '/ui/util.js',
