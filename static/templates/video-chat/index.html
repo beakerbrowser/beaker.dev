@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Video Chat</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+      #videos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 10px 0;
+      }
+      video {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Video Chat</h1>
+    <button id="startButton">Start</button>
+    <div id="videos">
+      <video id="localVideo" playsinline autoplay muted></video>
+      <video id="remoteVideo" playsinline autoplay></video>
+    </div>
+  </body>
+
+  <script>
+var peerSockets = new Set()
+var topic
+var localVideo;
+var localStream;
+var remoteVideo;
+var peerConnection;
+var uuid;
+
+var peerConnectionConfig = {
+  'iceServers': [
+    {'urls': 'stun:stun.stunprotocol.org:3478'},
+    {'urls': 'stun:stun.l.google.com:19302'},
+  ]
+};
+
+function pageReady() {
+  console.log('running setup')
+  uuid = createUUID();
+
+  localVideo = document.getElementById('localVideo');
+  remoteVideo = document.getElementById('remoteVideo');
+
+  var peerEvents = beaker.peersockets.watch()
+  peerEvents.addEventListener('join', e => {
+    console.log('join', e)
+    peerSockets.add(e.peerId)
+  })
+  peerEvents.addEventListener('leave', e => {
+    console.log('leave', e)
+    peerSockets.delete(e.peerId)
+  })
+  topic = beaker.peersockets.join('signalling')
+  topic.addEventListener('message', gotMessageFromPeersocket)
+
+  var constraints = {
+    video: true,
+    audio: true,
+  };
+
+  if(navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia(constraints).then(getUserMediaSuccess).catch(errorHandler);
+  } else {
+    alert('Your browser does not support getUserMedia API');
+  }
+  console.log('setup finished')
+}
+
+function sendToAllPeersockets (message) {
+  console.log('sent', {message})
+  message = new TextEncoder('utf-8').encode(JSON.stringify(message))
+  for (let peer of peerSockets) {
+    topic.send(peer, message)
+  }
+}
+
+function getUserMediaSuccess(stream) {
+  localStream = stream;
+  localVideo.srcObject = stream;
+}
+
+function start(isCaller) {
+  peerConnection = new RTCPeerConnection(peerConnectionConfig);
+  peerConnection.onicecandidate = gotIceCandidate;
+  peerConnection.ontrack = gotRemoteStream;
+  peerConnection.addStream(localStream);
+
+  if(isCaller) {
+    peerConnection.createOffer().then(createdDescription).catch(errorHandler);
+  }
+}
+startButton.addEventListener('click', start)
+
+function gotMessageFromPeersocket({peerId, message}) {
+  console.log('received', {peerId, message})
+  if(!peerConnection) start(false);
+
+  var signal = JSON.parse(new TextDecoder().decode(message));
+
+  // Ignore messages from ourself
+  if(signal.uuid == uuid) return;
+
+  if(signal.sdp) {
+    peerConnection.setRemoteDescription(new RTCSessionDescription(signal.sdp)).then(function() {
+      // Only create answers in response to offers
+      if(signal.sdp.type == 'offer') {
+        peerConnection.createAnswer().then(createdDescription).catch(errorHandler);
+      }
+    }).catch(errorHandler);
+  } else if(signal.ice) {
+    peerConnection.addIceCandidate(new RTCIceCandidate(signal.ice)).catch(errorHandler);
+  }
+}
+
+function gotIceCandidate(event) {
+  if(event.candidate != null) {
+    sendToAllPeersockets({'ice': event.candidate, 'uuid': uuid});
+  }
+}
+
+function createdDescription(description) {
+  console.log('got description');
+
+  peerConnection.setLocalDescription(description).then(function() {
+    sendToAllPeersockets({'sdp': peerConnection.localDescription, 'uuid': uuid});
+  }).catch(errorHandler);
+}
+
+function gotRemoteStream(event) {
+  console.log('got remote stream');
+  remoteVideo.srcObject = event.streams[0];
+}
+
+function errorHandler(error) {
+  console.log(error);
+}
+
+// Taken from http://stackoverflow.com/a/105074/515584
+// Strictly speaking, it's not a real UUID, but it gets the job done here
+function createUUID() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+
+pageReady()
+  </script>
+</html>

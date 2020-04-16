@@ -21,3 +21,7 @@ Templates are a quick way to start with new apps and projects.
 {{< linkcard relref="./templates/chat-room" img="/templates/chat-room.png" >}}
   Chat Room
 {{< /linkcard >}}
+
+{{< linkcard relref="./templates/video-chat" img="/templates/video-chat.png" >}}
+  Video Chat
+{{< /linkcard >}}

@@ -103,7 +103,6 @@ customElements.define('photo-album-app', class extends HTMLElement {
     var existingDialog = this.querySelector('dialog')
     if (existingDialog) existingDialog.remove()
 
-  console.log(await beaker.hyperdrive.stat(`/photos/${photo}`))
     var description = (await beaker.hyperdrive.stat(`/photos/${photo}`).catch(e => {}))?.metadata?.description
 
     var dialog = h('dialog', {},
@@ -149,7 +148,6 @@ customElements.define('photo-album-app', class extends HTMLElement {
 
       description = dialog.querySelector('.edit-description textarea').value
       dialog.querySelector('.description').textContent = description
-      console.log('writing', `/photos/${photo}`, {description})
       await beaker.hyperdrive.updateMetadata(`/photos/${photo}`, {description})
     }
 
