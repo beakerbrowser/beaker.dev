@@ -106,12 +106,12 @@
     border: 1px solid $gray-800;
     margin-bottom: 1rem;
     color: #000;
+    color: #1976D2;
   }
 
   .linkcard:hover {
     text-decoration: none;
-    color: #1976D2;
-    border-color: #1976D2;
+    background: $gray-100;
   }
 
   .linkcard img {

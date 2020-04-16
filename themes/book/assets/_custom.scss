@@ -19,9 +19,15 @@
   font-size: 0.9rem;
 }
 
-.book-columns.colorful > *:hover {
+.book-columns.colorful span.title {
+  display: block;
   color: #1976D2;
-  border-color: #1976D2;
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+
+.book-columns.colorful > *:hover {
+  background: $gray-100;
 }
 
 .book-columns.colorful > :nth-child(1) {
@@ -36,12 +42,6 @@
 .book-columns.colorful > :nth-child(3) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-}
-
-.book-columns.colorful span.title {
-  display: block;
-  font-size: 1.25rem;
-  margin-bottom: 0.5em;
 }
 
 .template-thumb {
