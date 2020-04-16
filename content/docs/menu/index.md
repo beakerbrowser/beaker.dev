@@ -5,6 +5,7 @@ headless = true
 - **[News]({{< relref "/posts" >}})**
 - **[Templates]({{< relref "/docs/templates" >}})**
   - [Simple CMS]({{< relref "/docs/templates/simple-cms" >}})
+  - [Multi-user Wiki]({{< relref "/docs/templates/multiuser-wiki" >}})
   - [Microblog Feed]({{< relref "/docs/templates/microblog-feed" >}})
   - [Photo Album]({{< relref "/docs/templates/photo-album" >}})
   - [Chat Room]({{< relref "/docs/templates/chat-room" >}})

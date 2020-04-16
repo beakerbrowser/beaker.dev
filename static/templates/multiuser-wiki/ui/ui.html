@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="/thumb">
+  </head>
+  <body>
+    <page-controls></page-controls>
+    <page-content></page-content>
+  </body>
+  <script type="module" src="/.ui/ui.js"></script>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 8px auto;
+    }
+    main {
+      padding: 0 2px;
+      min-height: calc(100vh - 92px);
+    }
+    main.loading:before {
+      content: 'Loading...';
+      display: block;
+      padding: 20px 10px;
+    }
+    textarea.editor {
+      width: 100%;
+      min-height: calc(100vh - 130px);
+      outline: 0;
+      box-sizing: border-box;
+      padding: 6px;
+      font-size: 15px;
+    }
+    footer {
+      font-size: 85%;
+      padding: 10px;
+      border-top: 1px solid #bbb;
+    }
+  </style>
+</html>

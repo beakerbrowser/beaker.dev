@@ -10,6 +10,10 @@ Templates are a quick way to start with new apps and projects.
   Simple CMS
 {{< /linkcard >}}
 
+{{< linkcard relref="./templates/multiuser-wiki" img="/templates/multiuser-wiki.png" >}}
+  Multi-user Wiki
+{{< /linkcard >}}
+
 {{< linkcard relref="./templates/microblog-feed" img="/templates/microblog-feed.png" >}}
   Microblog Feed
 {{< /linkcard >}}
