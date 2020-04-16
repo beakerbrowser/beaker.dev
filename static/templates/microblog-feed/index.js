@@ -1,5 +1,6 @@
 import MarkdownIt from '/markdown-it.js'
 
+const md = new MarkdownIt({html: false, breaks: true})
 const PATH = '/microblog/'
 var profile = undefined
 try { profile = JSON.parse(localStorage.profile) }
@@ -94,13 +95,9 @@ customElements.define('bb-feed', class extends HTMLElement {
         } else {
           let txt = await beaker.hyperdrive.readFile(file.url)
           // render content
-          if (/\.(md|html)$/i.test(file.path)) {
-            if (file.path.endsWith('.md')) {
-              let md = new MarkdownIt({html: false, breaks: true})
-              txt = md.render(txt)
-            }
+          if (/\.md$/i.test(file.path)) {
             let content = h('div', {class: 'content'})
-            content.innerHTML = txt
+            content.innerHTML = md.render(txt)
             postDiv.append(content)
           } else {
             postDiv.append(h('div', {class: 'content'}, h('pre', txt)))
