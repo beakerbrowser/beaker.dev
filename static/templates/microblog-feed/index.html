@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Blahbity-blog</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/thumb.png">
+    <style>
+      body {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+      bb-composer {
+        display: block;
+        width: 500px;
+      }
+      bb-composer p {
+        margin: 0 0 5px;
+      }
+      bb-composer textarea,
+      bb-composer input {
+        padding: 5px;
+      }
+      bb-composer input {
+        margin-right: 10px;
+        border: 1px solid #bbb;
+      }
+      bb-composer textarea {
+        width: 100%;
+        min-height: 60px;
+        box-sizing: border-box;
+      }
+      bb-feed {
+        display: block;
+        margin: 1em 0;
+      }
+      .post {
+        display: grid;
+        align-items: 
+        grid-gap: 0;
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+        margin-bottom: 20px;
+      }
+      .post h1 { font-size: 21px; }
+      .post h2 { font-size: 20px; }
+      .post h3 { font-size: 19px; }
+      .post h4 { font-size: 18px; }
+      .post h5 { font-size: 17px; }
+      .post h6 { font-size: 16px; }
+      .post .thumb {
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+      .post .thumb img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+      .post .meta {
+        margin-bottom: 5px;
+      }
+      .post .content {
+        min-height: 26px;
+      }
+      .post .content > * {
+        margin: 0;
+      }
+      .post .content > * + * {
+        margin-top: 1rem;
+      }
+      .post .content img,
+      .post .content video {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Blahbity-blog</h1>
+
+    <p>Microblogging feed app</p>
+    <bb-composer></bb-composer>
+    <bb-feed></bb-feed>
+  </body>
+  <script type="module" src="/index.js"></script>
+</html>

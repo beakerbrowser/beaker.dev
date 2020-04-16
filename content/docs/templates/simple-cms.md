@@ -5,6 +5,14 @@
 
 <button class="create-drive">Create Drive from Template</button>
 
-<script src="/templates/simple-cms.js"></script>
+<script>
+  const TEMPLATE_ROOT = '/templates/simple-cms'
+  window.TEMPLATE_FILES = [
+    '/index.html',
+    '/ui/ui.js',
+    '/ui/ui.html',
+    '/ui/ui.css'
+  ]
+</script>
 <script src="/templates/index.js"></script>
 {{< /rawhtml >}}

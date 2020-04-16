@@ -1,7 +1,4 @@
-window.TEMPLATE_FILES = {
-  '/index.html': `<h1>Simple CMS</h1>
-<p>A simple content-management system.</p>`,
-  '/.ui/ui.js': `var pathname = location.pathname
+var pathname = location.pathname
 if (pathname.endsWith('/')) pathname += 'index.html'
 
 const $ = (sel, parent = document) => parent.querySelector(sel)
@@ -17,7 +14,7 @@ async function onNew (e) {
   var path = prompt('Enter the name of your new page')
   if (!path) return
   if (!path.endsWith('.html')) path += '.html'
-  await beaker.hyperdrive.writeFile(path, \`<h1>\${path}</h1>\`)
+  await beaker.hyperdrive.writeFile(path, `<h1>${path}</h1>`)
   location.pathname = path
 }
 
@@ -59,73 +56,4 @@ async function setup () {
   // start in view mode
   enterViewMode()
 }
-setup()`,
-  '/.ui/ui.html': `<!doctype html5>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="/.ui/ui.css">
-  </head>
-  <body>
-    <nav>
-      <div class="view-mode active">
-        <button class="new">New</button>
-        <hr>
-        <button class="edit">Edit</button>
-        <button class="remove">Delete</button>
-      </div>
-      <div class="edit-mode">
-        <button class="save">Save</button>
-        <button class="cancel">Cancel</button>
-      </div>
-    </nav>
-    <main></main>
-    <textarea id="editor"></textarea>
-    <script type="module" src="/.ui/ui.js"></script>
-  </body>
-</html>`,
-  '/.ui/ui.css': `body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  grid-gap: 30px;
-  height: 100%;
-  margin: 0;
-}
-
-body > nav {
-  background: #f3f3f8;
-  height: 100%;
-  padding: 10px;
-}
-
-body > nav .view-mode,
-body > nav .edit-mode,
-main,
-#editor {
-  display: none;
-}
-
-body > nav .view-mode.active,
-body > nav .edit-mode.active,
-main.active,
-#editor.active {
-  display: block;
-}
-
-body > nav button {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-body > nav hr {
-  border: 0;
-  border-top: 1px solid #ddd;
-}
-
-#editor {
-  height: 100vh;
-}`
-}
+setup()
