@@ -20,6 +20,8 @@
   <body>
     <h1>Video Chat</h1>
     <button id="startButton">Start</button>
+    <select id="videoSelect"></select>
+    <select id="audioSelect"></select>
     <div id="videos">
       <video id="localVideo" playsinline autoplay muted></video>
       <video id="remoteVideo" playsinline autoplay></video>
@@ -29,11 +31,11 @@
   <script>
 var peerSockets = new Set()
 var topic
-var localVideo;
 var localStream;
-var remoteVideo;
 var peerConnection;
 var uuid;
+var videoDevice;
+var audioDevice;
 
 var peerConnectionConfig = {
   'iceServers': [
@@ -42,12 +44,9 @@ var peerConnectionConfig = {
   ]
 };
 
-function pageReady() {
+async function pageReady() {
   console.log('running setup')
   uuid = createUUID();
-
-  localVideo = document.getElementById('localVideo');
-  remoteVideo = document.getElementById('remoteVideo');
 
   var peerEvents = beaker.peersockets.watch()
   peerEvents.addEventListener('join', e => {
@@ -61,17 +60,32 @@ function pageReady() {
   topic = beaker.peersockets.join('signalling')
   topic.addEventListener('message', gotMessageFromPeersocket)
 
-  var constraints = {
-    video: true,
-    audio: true,
-  };
+  navigator.mediaDevices.getUserMedia({video: true, audio: true}).then(getUserMediaSuccess).catch(errorHandler);
 
-  if(navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia(constraints).then(getUserMediaSuccess).catch(errorHandler);
-  } else {
-    alert('Your browser does not support getUserMedia API');
+  try {
+    var devices = await navigator.mediaDevices.enumerateDevices()
+    for (let device of devices) {
+      let opt = document.createElement('option')
+      opt.value = device.deviceId
+      opt.textContent = device.label
+      if (device.kind === 'videoinput') {
+        videoSelect.append(opt)
+      } else if (device.kind === 'audioinput') {
+        audioSelect.append(opt)
+      }
+    }
+    videoSelect.addEventListener('change', onChangeDevice)
+    audioSelect.addEventListener('change', onChangeDevice)
+  } catch (e) {
+    videoSelect.remove()
+    audioSelect.remove()
   }
+
   console.log('setup finished')
+}
+
+function onChangeDevice () {
+  navigator.mediaDevices.getUserMedia({video: {deviceId: videoSelect.value}, audio: {deviceId: audioSelect.value}}).then(getUserMediaSuccess).catch(errorHandler);
 }
 
 function sendToAllPeersockets (message) {
