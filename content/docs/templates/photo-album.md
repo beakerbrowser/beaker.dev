@@ -15,3 +15,5 @@
 </script>
 <script src="/templates/index.js"></script>
 {{< /rawhtml >}}
+
+This template creates a simple photo-album. It includes controls for the site-owner to add, edit, and remove photos.

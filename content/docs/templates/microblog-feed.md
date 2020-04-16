@@ -15,3 +15,5 @@
 </script>
 <script src="/templates/index.js"></script>
 {{< /rawhtml >}}
+
+This template creates a minimal microblogging app which works like the feed in the Beaker start page. Users publish posts as files in the `/microblog/` folder of their profile drive. The app uses your address book to choose whose posts to fetch.
