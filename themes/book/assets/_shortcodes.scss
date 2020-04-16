@@ -103,15 +103,15 @@
   .linkcard {
     display: flex;
     align-items: center;
-    border: 1px solid $gray-300;
+    border: 1px solid $gray-800;
     margin-bottom: 1rem;
-    color: $gray-700;
-    font-weight: bold;
+    color: #000;
   }
 
   .linkcard:hover {
     text-decoration: none;
-    background: $gray-100;
+    color: #1976D2;
+    border-color: #1976D2;
   }
 
   .linkcard img {
@@ -119,11 +119,12 @@
     height: 100px;
     object-fit: cover;
     object-position: top;
-    border-right: 1px solid $gray-300;
+    border-right: 1px solid $gray-500;
     margin-right: 30px;
   }
 
   .linkcard span {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    letter-spacing: 1px;
   }
 }
