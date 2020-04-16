@@ -13,3 +13,7 @@ Templates are a quick way to start with new apps and projects.
 {{< linkcard relref="./templates/microblog-feed" img="/templates/microblog-feed.png" >}}
   Microblog Feed
 {{< /linkcard >}}
+
+{{< linkcard relref="./templates/photo-album" img="/templates/photo-album.png" >}}
+  Photo Album
+{{< /linkcard >}}
