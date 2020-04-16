@@ -1,0 +1,4 @@
+{{ $path := .Get 0 }}
+{{ $lang := .Get 1 }}
+{{ $code := readFile $path }}
+{{ highlight $code $lang "" }}

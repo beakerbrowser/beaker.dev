@@ -15,3 +15,11 @@
 {{< /rawhtml >}}
 
 This template creates a minimal chat-room for all the visitors of the site. It uses the [peersockets API](https://beaker-browser.gitbook.io/docs/apis/beaker.peersockets) to send and receive messages. Traffic is encrypted so that only users who possess the site's URL can read it.
+
+## Source
+
+{{< tabsraw >}}
+{{< tab "/index.html" >}}
+{{< readcode "/static/templates/chat-room/index.html" "html" >}}
+{{< /tab >}}
+{{< /tabsraw >}}

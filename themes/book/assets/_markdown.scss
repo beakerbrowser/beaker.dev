@@ -115,6 +115,11 @@
     }
   }
 
+  // Make highlighted code a little smaller
+  .highlight pre {
+    font-size: 15px;
+  }
+
   // Special case for highlighted code with line numbers
   .highlight table tr {
     td:nth-child(1) pre {

@@ -30,3 +30,17 @@ Each author maintains a folder under `/beaker-wiki/{wiki-drive-key}/`. When a pa
 ```
 
 The matching file with the highest mtime is then chosen for rendering.
+
+## Source
+
+{{< tabsraw >}}
+{{< tab "/.ui/ui.html" >}}
+{{< readcode "/static/templates/multiuser-wiki/ui/ui.html" "html" >}}
+{{< /tab >}}
+{{< tab "/.ui/ui.js" >}}
+{{< readcode "/static/templates/multiuser-wiki/ui/ui.js" "js" >}}
+{{< /tab >}}
+{{< tab "/.ui/util.js" >}}
+{{< readcode "/static/templates/multiuser-wiki/ui/util.js" "js" >}}
+{{< /tab >}}
+{{< /tabsraw >}}

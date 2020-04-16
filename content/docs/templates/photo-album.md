@@ -17,3 +17,17 @@
 {{< /rawhtml >}}
 
 This template creates a simple photo-album. It includes controls for the site-owner to add, edit, and remove photos.
+
+## Source
+
+{{< tabsraw >}}
+{{< tab "/index.html" >}}
+{{< readcode "/static/templates/photo-album/index.html" "html" >}}
+{{< /tab >}}
+{{< tab "/index.js" >}}
+{{< readcode "/static/templates/photo-album/index.js" "js" >}}
+{{< /tab >}}
+{{< tab "/index.css" >}}
+{{< readcode "/static/templates/photo-album/index.css" "css" >}}
+{{< /tab >}}
+{{< /tabsraw >}}

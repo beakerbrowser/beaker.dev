@@ -30,7 +30,7 @@
     margin-top: $padding-16;
     margin-bottom: $padding-16;
 
-    border: $padding-1 solid $gray-200;
+    border: $padding-1 solid $gray-600;
     border-radius: $border-radius;
 
     overflow: hidden;
@@ -51,6 +51,14 @@
       border-top: $padding-1 solid $gray-100;
       padding: $padding-16;
       display: none;
+
+      & > .highlight:first-child > pre {
+        margin-top: 0;
+      }
+
+      & > .highlight:last-child > pre {
+        margin-bottom: 0;
+      }
     }
 
     input[type="radio"]:checked + label {
