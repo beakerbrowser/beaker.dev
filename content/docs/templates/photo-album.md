@@ -1,4 +1,4 @@
-# Photo Albumb Template
+# Photo Album Template
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/photo-album.png">

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat Room</title>
+  </head>
+  <body>
+    <h1>Chat Room</h1>
+    <input id="input" placeholder="Enter your message here">
+    <div id="output"></div>
+    <style>
+      body {
+        margin: 20px;
+      }
+      input {
+        width: 500px;
+      }
+      #output {
+        white-space: pre;
+        padding: 10px;
+        font-family: monospace;
+      }
+    </style>
+    <script>
+      var topic
+      var peers = new Set()
+      var input = document.querySelector('#input')
+      var output = document.querySelector('#output')
+      
+      setup()
+      async function setup () {
+        var peerEvents = beaker.peersockets.watch()
+        peerEvents.addEventListener('join', e => {
+          console.log('join', e)
+          peers.add(e.peerId)
+          output.innerHTML += `<em>Peer ${e.peerId} has joined</em>\n`
+        })
+        peerEvents.addEventListener('leave', e => {
+          console.log('leave', e)
+          peers.delete(e.peerId)
+          output.innerHTML += `<em>Peer ${e.peerId} has left</em>\n`
+        })
+
+        topic = beaker.peersockets.join('chat')
+        input.addEventListener('keydown', e => {
+          if (e.keyCode !== 13) return
+
+          output.innerHTML += `<strong>You said:</strong> `
+          output.append(`${input.value}\n`)
+          var message = new TextEncoder('utf-8').encode(input.value)
+          input.value = ''
+
+          for (let peer of peers) {
+            console.log('sending to', peer)
+            topic.send(peer, message)
+          }
+        })
+        topic.addEventListener('message', e => {
+          console.log('message', e)
+          output.innerHTML += `<strong>Peer ${e.peerId} says:</strong> `
+          output.append(`${new TextDecoder().decode(e.message)}\n`)
+        })
+      }
+    </script>
+  </body>
+</html>
