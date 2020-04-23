@@ -1,42 +1,50 @@
 
 {{ define "main" }}
-<div class="markdown">
-  {{ .Content }}
+
+<div class="title-banner">
+  <div class="content-container">
+    <div class="markdown">
+      {{ .Content }}
+    </div>
+
+    <div class="book-columns flex flex-wrap colorful">
+      
+      <a href="/docs/templates" class="flex-even markdown-inner">
+        <span class="title">Templates</span>
+        <span class="fas fa-arrow-right"></span>
+      </a>
+      
+      <a href="/docs/tutorials" class="flex-even markdown-inner">
+        <span class="title">Tutorials</span>
+        <span class="fas fa-arrow-right"></span>
+      </a>
+      
+      <a href="https://beaker-browser.gitbook.io/docs/#apis" class="flex-even markdown-inner">
+        <span class="title">API Reference</span>
+        <span class="fas fa-arrow-right"></span>
+      </a>
+      
+    </div>
+  </div>
 </div>
 
-<div class="book-columns flex flex-wrap colorful" style="margin-bottom: 2.5em">
-  
-  <a href="/docs/templates" class="flex-even markdown-inner">
-    <span class="title">Templates</span>
-    <span class="description">Create new apps quickly</span>
-  </a>
-  
-  <a href="/docs/tutorials" class="flex-even markdown-inner">
-    <span class="title">Tutorials</span>
-    <span class="description">Learn how to build apps</span>
-  </a>
-  
-  <a href="https://beaker-browser.gitbook.io/docs/#apis" class="flex-even markdown-inner">
-    <span class="title">API Reference</span>
-    <span class="description">Read API documentation</span>
-  </a>
-  
+<div class="content-container">
+  <h2>Latest News</h2>
+
+  {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+  <article class="markdown book-post">
+    <h3 class="post-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+    {{ partial "docs/post-meta" . }}
+    <p>
+      {{- .Summary -}}
+      {{ if .Truncated }}
+        <a href="{{ .RelPermalink }}">...</a>
+      {{ end }}
+    </p>
+  </article>
+  {{ end }}
+
 </div>
-
-<h2>Latest News</h2>
-
-{{ range first 5 (where .Site.RegularPages "Section" "posts") }}
-<article class="markdown book-post">
-  <h3 class="post-title">
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-  </h3>
-  {{ partial "docs/post-meta" . }}
-  <p>
-    {{- .Summary -}}
-    {{ if .Truncated }}
-      <a href="{{ .RelPermalink }}">...</a>
-    {{ end }}
-  </p>
-</article>
-{{ end }}
 {{ end }}

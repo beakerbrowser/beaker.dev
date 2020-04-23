@@ -1,10 +1,14 @@
-# Templates
+---
+title: Templates
+---
 
 Create Hyperdrives with pre-built HTML/CSS/JS.
 
 {{< hint info >}}
 Templates are a quick way to start with new apps and projects.
 {{< /hint >}}
+
+{{< linkcardgrid >}}
 
 {{< linkcard relref="./templates/simple-cms" img="/templates/simple-cms.png" >}}
   Simple CMS
@@ -29,3 +33,5 @@ Templates are a quick way to start with new apps and projects.
 {{< linkcard relref="./templates/video-chat" img="/templates/video-chat.png" >}}
   Video Chat
 {{< /linkcard >}}
+
+{{< /linkcardgrid >}}

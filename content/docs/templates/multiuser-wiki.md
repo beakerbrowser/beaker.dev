@@ -1,4 +1,6 @@
-# Multi-user Wiki Template
+---
+title: Multi-user Wiki Template
+---
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/multiuser-wiki.png">

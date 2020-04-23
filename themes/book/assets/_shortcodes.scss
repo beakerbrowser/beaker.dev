@@ -103,6 +103,10 @@
       &.#{$name} {
         border-left-color: $color;
         background-color: rgba($color, 0.1);
+
+        span {
+          color: $color;
+        }
       }
     }
   }
@@ -111,7 +115,7 @@
   .linkcard {
     display: flex;
     align-items: center;
-    border: 1px solid $gray-800;
+    border: 1px solid $gray-500;
     margin-bottom: 1rem;
     color: $color-link;
   }
@@ -133,5 +137,31 @@
   .linkcard span {
     font-size: 1.35rem;
     letter-spacing: 1px;
+    color: $gray-800;
+  }
+
+  // {{< linkcardgrid >}}
+  .linkcardgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  
+    .linkcard {
+      flex-direction: column;
+      margin: 0;
+
+      img {
+        margin: 0;
+        width: auto;
+        height: auto;
+        border: 0;
+        border-bottom: 1px solid $gray-500;
+      }
+
+      span {
+        font-size: 1.1rem;
+        padding: 5px;
+      }
+    }
   }
 }

@@ -8,16 +8,12 @@
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
-  <main class="container flex">
+  <main class="container">
     <aside class="book-menu">
       {{ template "menu" . }} <!-- Left menu Content -->
     </aside>
 
     <div class="book-page">
-      <header class="book-header">
-        {{ template "header" . }} <!-- Mobile layout header -->
-      </header>
-
       {{ partial "docs/inject/content-before" . }}
       {{ template "main" . }} <!-- Page Content -->
       {{ partial "docs/inject/content-after" . }}

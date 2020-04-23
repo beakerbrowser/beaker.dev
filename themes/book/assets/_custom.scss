@@ -12,36 +12,35 @@
 }
 
 .book-columns.colorful > * {
-  padding: 16px 20px;
+  position: relative;
+  padding: 10px 0;
   box-sizing: border-box;
   color: $gray-800;
-  border: 1px solid $gray-800;
-  font-size: 0.9rem;
+  border-bottom: 2px solid #3081e2;
+  margin: 0 10px;
+}
+
+.book-columns.colorful > *:first-child {
+  margin-left: 0;
+}
+
+.book-columns.colorful > *:last-child {
+  margin-right: 0;
 }
 
 .book-columns.colorful span.title {
-  display: block;
-  color: $color-link;
-  font-size: 1.25rem;
-  margin-bottom: 0.5em;
+  font-size: 1.1rem;
 }
 
-.book-columns.colorful > *:hover {
-  background: $gray-100;
+.book-columns.colorful span.fas {
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  transition: right 0.1s;
 }
 
-.book-columns.colorful > :nth-child(1) {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-
-.book-columns.colorful > :nth-child(2) {
-  margin: 0 4px;
-}
-
-.book-columns.colorful > :nth-child(3) {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+.book-columns.colorful > *:hover span.fas {
+  right: 0px;
 }
 
 .template-thumb {

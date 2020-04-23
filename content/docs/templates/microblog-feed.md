@@ -1,4 +1,6 @@
-# Microblog Feed Template
+---
+title: Microblog Feed Template
+---
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/microblog-feed.png">

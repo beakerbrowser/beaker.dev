@@ -1,4 +1,6 @@
-# Tutorials
+---
+title: Tutorials
+---
 
 Learn how to build apps in Beaker.
 

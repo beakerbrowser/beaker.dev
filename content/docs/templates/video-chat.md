@@ -1,4 +1,6 @@
-# Video Chat Template
+---
+title: Video Chat Template
+---
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/video-chat.png">

@@ -1,4 +1,6 @@
-# Building a CMS "Frontend"
+---
+title: Building a CMS "Frontend"
+---
 
 [In the self-modifying site tutorial](../self-modifying-site), we created a simple self-modifying site. While it worked, it didn't have any way to automatically include the editing tools on every page.
 

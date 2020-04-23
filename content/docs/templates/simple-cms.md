@@ -1,4 +1,6 @@
-# Simple CMS Template
+---
+title: Simple CMS Template
+---
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/simple-cms.png">

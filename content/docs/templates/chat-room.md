@@ -1,4 +1,6 @@
-# Chat Room Template
+---
+title: Chat Room Template
+---
 
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/chat-room.png">
