@@ -66,3 +66,69 @@ button.create-drive:hover {
   cursor: pointer;
   background: $gray-100;
 }
+
+.links-directory {
+  margin: 1.5rem 0;
+
+  .hidden {
+    display: none;
+  }
+
+  .links-directory-ctrls {
+    display: flex;
+    margin-bottom: 1.5rem;
+
+    input {
+      flex: 1;
+      padding: 0.3rem 0.6rem;
+    }
+
+    button {
+      padding: 2px 0.7rem 0;
+      font-size: 0.9rem;
+      margin-left: 0.8rem;
+    }
+  }
+
+  .links-directory-main {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 1.2rem;
+  }
+
+  .links-directory-nav {
+    border-right: 1px solid $gray-400;
+
+    a {
+      display: block;
+      margin: 0.7rem 0;
+      color: $gray-800;
+
+      &.active {
+        font-weight: bold
+      }
+    }
+  }
+
+  .links-directory-results {
+    .link {
+      margin: 0.5rem 1rem 1.5rem;
+
+      .title {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+      }
+
+      .author {
+        color: $gray-600;
+      }
+    }
+
+    .empty {
+      background: $gray-100;
+      color: $gray-800;
+      text-align: center;
+      padding: 6rem;
+    }
+  }
+}

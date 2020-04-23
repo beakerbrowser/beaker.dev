@@ -29,22 +29,16 @@
 </div>
 
 <div class="content-container">
-  <h2>Latest News</h2>
-
-  {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
-  <article class="markdown book-post">
-    <h3 class="post-title">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    </h3>
-    {{ partial "docs/post-meta" . }}
-    <p>
-      {{- .Summary -}}
-      {{ if .Truncated }}
-        <a href="{{ .RelPermalink }}">...</a>
-      {{ end }}
-    </p>
-  </article>
-  {{ end }}
-
+  <div class="links-directory">
+    <div class="links-directory-ctrls">
+      <input placeholder="Search">
+      <button class="hidden">Add Link</button>
+    </div>
+    <div class="links-directory-main">
+      <div class="links-directory-nav"></div>
+      <div class="links-directory-results"></div>
+    </div>
+  </div>
+  <script type="module" src="/links-directory.js"></script>
 </div>
 {{ end }}
