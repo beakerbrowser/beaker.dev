@@ -74,6 +74,13 @@ button.create-drive:hover {
     display: none;
   }
 
+  .signin-prompt {
+    background: $gray-100;
+    padding: 1rem;
+    margin: -0.5rem 0 1.5rem;
+    text-align: center;
+  }
+
   .links-directory-ctrls {
     display: flex;
     margin-bottom: 1.5rem;
@@ -112,15 +119,25 @@ button.create-drive:hover {
 
   .links-directory-results {
     .link {
-      margin: 0.5rem 1rem 1.5rem;
+      margin: 0.5rem 1rem 1rem;
+      font-size: 0.8rem;
+      line-height: 1.3;
+
+      a:hover {
+        text-decoration: underline;
+      }
 
       .title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         letter-spacing: 0.5px;
       }
 
       .author {
         color: $gray-600;
+
+        a {
+          color: inherit;
+        }
       }
     }
 
@@ -130,5 +147,40 @@ button.create-drive:hover {
       text-align: center;
       padding: 6rem;
     }
+  }
+}
+
+#add-link-dialog {
+  border: 1px solid $gray-700;
+  padding: 1.3rem;
+
+  form {
+    width: 500px;
+  }
+
+  h2 {
+    margin: 0 0 2rem;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    label {
+      flex: 0 0 100px;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+
+    input {
+      flex: 1;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
   }
 }

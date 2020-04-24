@@ -41,4 +41,32 @@
   </div>
   <script type="module" src="/links-directory.js"></script>
 </div>
+
+<dialog id="add-link-dialog">
+  <form method="dialog">
+    <h2>Share a link</h2>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" name="title" required>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" name="description">
+    </div>
+    <div class="form-group">
+      <label>URL</label>
+      <input type="text" name="href" required>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select name="category" required>
+        <option disabled selected value>-- Select a category --</option>
+      </select>
+    </div>
+    <div class="form-actions">
+      <button>Cancel</button>
+      <button type="submit">Share</button>
+    </div>
+  </form>
+</dialog>
 {{ end }}
