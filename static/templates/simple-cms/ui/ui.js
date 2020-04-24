@@ -14,6 +14,7 @@ async function onNew (e) {
   var path = prompt('Enter the name of your new page')
   if (!path) return
   if (!path.endsWith('.html')) path += '.html'
+  if (!path.startsWith('/')) path = `/${path}`
   await beaker.hyperdrive.writeFile(path, `<h1>${path}</h1>`)
   location.pathname = path
 }
