@@ -115,7 +115,7 @@
   .linkcard {
     display: flex;
     align-items: center;
-    border: 1px solid $gray-500;
+    border: 1px solid $gray-300;
     margin-bottom: 1rem;
     color: $color-link;
   }
@@ -130,14 +130,15 @@
     height: 100px;
     object-fit: cover;
     object-position: top;
-    border-right: 1px solid $gray-500;
+    border-right: 1px solid $gray-300;
     margin-right: 30px;
   }
 
   .linkcard span {
-    font-size: 1.35rem;
+    font-size: 1.15rem;
+    font-weight: 600;
     letter-spacing: 1px;
-    color: $gray-800;
+    color: #000;
   }
 
   // {{< linkcardgrid >}}
@@ -163,11 +164,13 @@
         width: auto;
         height: auto;
         border: 0;
-        border-bottom: 1px solid $gray-500;
+        border-bottom: 1px solid $gray-300;
       }
 
       span {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        font-weight: 600;
         padding: 5px;
       }
     }
