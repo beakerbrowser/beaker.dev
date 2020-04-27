@@ -293,6 +293,26 @@ aside nav,
   }
 }
 
+@media (max-width: 530px) {
+  .title-banner {
+    padding: 0.4rem 2rem;
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+
+  aside nav {
+    padding-top: 1.5rem;
+
+    ul li {
+      margin: 1rem 0.5rem 1rem 0.25rem;
+      white-space: nowrap;
+    }
+  }
+}
+
 // Extra space for big screens
 @media screen and (min-width: $container-max-width) {
   .book-menu nav,

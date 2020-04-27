@@ -3,9 +3,7 @@
 
 <div class="title-banner">
   <div class="content-container">
-    <div class="markdown">
-      {{ .Content }}
-    </div>
+    {{ .Content }}
 
     <div class="book-columns flex flex-wrap colorful">
       
@@ -28,8 +26,8 @@
   </div>
 </div>
 
-<div class="content-container">
-  <div class="links-directory">
+<div class="links-directory">
+  <div class="content-container">
     <div class="links-directory-ctrls">
       <input placeholder="Search">
       <button class="hidden">Add Link</button>
@@ -39,8 +37,8 @@
       <div class="links-directory-results"></div>
     </div>
   </div>
-  <script type="module" src="/links-directory.js"></script>
 </div>
+  <script type="module" src="/links-directory.js"></script>
 
 <dialog id="add-link-dialog">
   <form method="dialog">

@@ -43,6 +43,16 @@
   right: 0px;
 }
 
+@media (max-width: 530px) {
+  .book-columns.colorful {
+    flex-direction: column;
+
+    & > * {
+      margin: 0 0 1.5rem;
+    }
+  }
+}
+
 .template-thumb {
   display: block;
   width: 400px;
@@ -59,6 +69,7 @@ button.create-drive {
   padding: 8px 0;
   margin: 0 0 1rem;
   width: 400px;
+  max-width: 100%;
   text-align: center;
 }
 
@@ -69,6 +80,7 @@ button.create-drive:hover {
 
 .links-directory {
   margin: 1.5rem 0;
+  padding: 0 2rem;
 
   .hidden {
     display: none;
@@ -146,6 +158,42 @@ button.create-drive:hover {
       color: $gray-800;
       text-align: center;
       padding: 6rem;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .links-directory {
+    .links-directory-ctrls {
+      margin-bottom: 0;
+
+      input {
+        padding: 1rem;
+      }
+    }
+
+    .links-directory-main {
+      display: block;
+
+      .links-directory-nav {
+        display: flex;
+        overflow-x: scroll;
+        border: 1px solid $gray-400;
+        border-top: 0;
+        background: $gray-100;
+        padding: 0.35rem 1rem;
+        margin-bottom: 1.5rem;
+
+        a {
+          padding-right: 1rem;
+        }
+      }
+
+      .links-directory-results {
+        .link {
+          font-size: 0.9rem;
+        }
+      }
     }
   }
 }
