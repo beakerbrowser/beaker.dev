@@ -58,7 +58,10 @@ const CATEGORIES = [
   {id: 'sites', title: 'Sites'}
 ]
 
-var currentCategory = CATEGORIES[0].id
+var currentCategory = location.hash.slice(1)
+if (!currentCategory || !CATEGORIES.find(c => c.id === currentCategory)) {
+  currentCategory = CATEGORIES[0].id
+}
 var currentFilter = ''
 var profile = undefined
 
@@ -155,6 +158,7 @@ function applyFilter () {
 function onClickCategory (e) {
   e.preventDefault()
   currentCategory = e.currentTarget.dataset.category
+  history.replaceState({}, undefined, '/#' + currentCategory)
   render()
 }
 
