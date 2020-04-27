@@ -7,33 +7,32 @@
         max-width: 680px;
         margin: 0 auto;
       }
-      bb-composer {
+      microblog-composer {
         display: block;
         width: 500px;
       }
-      bb-composer p {
+      microblog-composer p {
         margin: 0 0 5px;
       }
-      bb-composer textarea,
-      bb-composer input {
+      microblog-composer textarea,
+      microblog-composer input {
         padding: 5px;
       }
-      bb-composer input {
+      microblog-composer input {
         margin-right: 10px;
         border: 1px solid #bbb;
       }
-      bb-composer textarea {
+      microblog-composer textarea {
         width: 100%;
         min-height: 60px;
         box-sizing: border-box;
       }
-      bb-feed {
+      microblog-feed {
         display: block;
         margin: 1em 0;
       }
       .post {
         display: grid;
-        align-items: 
         grid-gap: 0;
         grid-template-columns: 60px 1fr;
         grid-template-rows: auto auto;
@@ -60,6 +59,9 @@
       .post .content {
         min-height: 26px;
       }
+      .post iframe.content {
+        width: 100%;
+      }
       .post .content > * {
         margin: 0;
       }
@@ -73,11 +75,9 @@
     </style>
   </head>
   <body>
-    <h1>Blahbity-blog</h1>
-
-    <p>Microblogging feed app</p>
-    <bb-composer></bb-composer>
-    <bb-feed></bb-feed>
+    <h1>My Feed</h1>
+    <microblog-composer></microblog-composer>
+    <microblog-feed></microblog-feed>
   </body>
   <script type="module" src="/index.js"></script>
 </html>

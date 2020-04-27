@@ -1,4 +1,3 @@
-import MarkdownIt from './markdown-it.js'
 import { getSiteMeta, queryForPage, writeFile, slugify } from './util.js'
 
 const EDIT_MODE = location.search.includes('?edit')
@@ -162,8 +161,7 @@ customElements.define('page-content', class extends HTMLElement {
       }
       // render content
       if (/.md$/i.test(file.path)) {
-        let md = new MarkdownIt({html: false})
-        main.innerHTML = md.render(content)
+        main.innerHTML = beaker.markdown.toHTML(content)
       } else {
         main.append(h('pre', content))
       }

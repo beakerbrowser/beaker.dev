@@ -17,7 +17,7 @@ const BUILTIN_LINKS = [
   },
   {
     title: 'Microblog Feed',
-    description: 'A minimal microblogging app which works like the feed in Beaker\'s start page',
+    description: 'A minimal microblogging app',
     href: '/docs/templates/microblog-feed/',
     type: 'templates',
     author: THIS_AUTHOR

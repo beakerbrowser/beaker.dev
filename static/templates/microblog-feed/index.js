@@ -1,12 +1,12 @@
-import MarkdownIt from '/markdown-it.js'
+const IFRAME_CSP = `default-src 'self' 'unsafe-inline';`
+const IFRAME_SANDBOX = `allow-forms allow-scripts allow-popups allow-popups-to-escape-sandbox`
 
-const md = new MarkdownIt({html: false, breaks: true})
 const PATH = '/microblog/'
 var profile = undefined
 try { profile = JSON.parse(localStorage.profile) }
 catch (e) { console.debug(e) }
 
-customElements.define('bb-composer', class extends HTMLElement {
+customElements.define('microblog-composer', class extends HTMLElement {
   async connectedCallback () {
     if (!profile) {
       this.append(h('button', {click: this.onClickChangeProfile.bind(this)}, 'Select a profile to post with'))
@@ -43,7 +43,7 @@ customElements.define('bb-composer', class extends HTMLElement {
 })
 
 
-customElements.define('bb-feed', class extends HTMLElement {
+customElements.define('microblog-feed', class extends HTMLElement {
   async connectedCallback () {
     this.textContent = 'loading...'
     try {
@@ -87,17 +87,24 @@ customElements.define('bb-feed', class extends HTMLElement {
 
       try {
         if (/\.(png|jpe?g|gif|svg)$/i.test(file.path)) {
-          postDiv.append(h('div', {class: 'content'}, h('img', {src: file.url})))
+         postDiv.append(h('div', {class: 'content'}, h('img', {src: file.url})))
         } else if (/\.(mp4|webm|mov)/i.test(file.path)) {
-          postDiv.append(h('div', {class: 'content'}, h('video', {controls: true}, h('source', {src: file.url}))))
+         postDiv.append(h('div', {class: 'content'}, h('video', {controls: true}, h('source', {src: file.url}))))
         } else if (/\.(mp3|ogg)/i.test(file.path)) {
-          postDiv.append(h('div', {class: 'content'}, h('audio', {controls: true}, h('source', {src: file.url}))))
+         postDiv.append(h('div', {class: 'content'}, h('audio', {controls: true}, h('source', {src: file.url}))))
+        } else if (/\.html?$/i.test(file.path)) {
+            let content = h('iframe', {
+              class: 'content',
+              csp: IFRAME_CSP,
+              sandbox: IFRAME_SANDBOX,
+              src: file.url
+            })
+            postDiv.append(content)
         } else {
           let txt = await beaker.hyperdrive.readFile(file.url)
-          // render content
           if (/\.md$/i.test(file.path)) {
             let content = h('div', {class: 'content'})
-            content.innerHTML = md.render(txt)
+            content.innerHTML = beaker.markdown.toHTML(txt)
             postDiv.append(content)
           } else {
             postDiv.append(h('div', {class: 'content'}, h('pre', txt)))
