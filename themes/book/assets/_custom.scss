@@ -56,26 +56,28 @@
 .template-thumb {
   display: block;
   width: 400px;
-  margin: 1rem 0;
-  border: 1px solid $gray-600;
+  margin: 2rem 0 1rem;
+  border: 1px solid $gray-400;
 }
 
 button.create-drive {
   display: block;
-  background: #fff;
-  border: 1px solid $gray-600;
-  color: $color-link;
+  color: #fff;
+  border: 0;
+  background: $color-link;
+  box-shadow: 0 1px 2px #0004;
   border-radius: 4px;
   padding: 8px 0;
   margin: 0 0 1rem;
   width: 400px;
   max-width: 100%;
   text-align: center;
+  transition: box-shadow 0.2s;
 }
 
 button.create-drive:hover {
   cursor: pointer;
-  background: $gray-100;
+  box-shadow: 0 2px 4px #0006;
 }
 
 .links-directory {
