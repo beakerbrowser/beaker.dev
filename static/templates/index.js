@@ -2,7 +2,9 @@ var createDriveButton = document.querySelector('.create-drive')
 if (typeof beaker !== 'undefined' && typeof beaker.hyperdrive !== 'undefined') {
   createDriveButton.textContent = 'Create Drive from this Template'
   createDriveButton.addEventListener('click', async (e) => {
-    var drive = await beaker.hyperdrive.createDrive()
+    var drive = await beaker.hyperdrive.createDrive({
+      title: TEMPLATE_TITLE
+    })
     for (let path of TEMPLATE_FILES) {
       let v = await fetch(TEMPLATE_ROOT + path).then(res => res.text())
       if (path.startsWith('/ui/')) {

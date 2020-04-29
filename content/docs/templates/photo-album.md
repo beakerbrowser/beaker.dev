@@ -9,6 +9,7 @@ title: Photo Album Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/photo-album'
+  const TEMPLATE_TITLE = 'My Photo Album'
   window.TEMPLATE_FILES = [
     '/index.html',
     '/index.js',

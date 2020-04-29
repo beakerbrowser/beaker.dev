@@ -9,6 +9,7 @@ title: Multi-user Wiki Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/multiuser-wiki'
+  const TEMPLATE_TITLE = 'My Wiki'
   window.TEMPLATE_FILES = [
     '/ui/ui.html',
     '/ui/ui.js',

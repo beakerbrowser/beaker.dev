@@ -9,6 +9,7 @@ title: Microblog Feed Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/microblog-feed'
+  const TEMPLATE_TITLE = 'My Feed'
   window.TEMPLATE_FILES = [
     '/index.html',
     '/index.js',

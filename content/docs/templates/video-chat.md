@@ -9,6 +9,7 @@ title: Video Chat Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/video-chat'
+  const TEMPLATE_TITLE = 'My Video Chat'
   window.TEMPLATE_FILES = [
     '/index.html'
   ]

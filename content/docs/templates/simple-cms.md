@@ -9,6 +9,7 @@ title: Simple CMS Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/simple-cms'
+  const TEMPLATE_TITLE = 'My Website'
   window.TEMPLATE_FILES = [
     '/index.html',
     '/ui/ui.js',
