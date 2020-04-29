@@ -111,6 +111,13 @@
     }
   }
 
+  // {{< niceimg >}}
+  .niceimg {
+    display: block;
+    margin: 2rem auto;
+    box-shadow: 0 2px 4px #0004;
+  }
+
   // {{< linkcard >}}
   .linkcard {
     display: flex;
@@ -118,27 +125,40 @@
     border: 1px solid $gray-300;
     margin-bottom: 1rem;
     color: $color-link;
-  }
+    box-shadow: 0 2px 4px #0001;
 
-  .linkcard:hover {
-    text-decoration: none;
-    background: $gray-100;
-  }
+    &:hover {
+      text-decoration: none;
+      background: $gray-100;
+    }
 
-  .linkcard img {
-    width: 200px;
-    height: 100px;
-    object-fit: cover;
-    object-position: top;
-    border-right: 1px solid $gray-300;
-    margin-right: 30px;
-  }
+    img {
+      width: 200px;
+      height: 100px;
+      object-fit: cover;
+      object-position: top;
+      border-right: 1px solid $gray-300;
+    }
 
-  .linkcard span {
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #000;
+    span {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #000;
+      padding: 0.9rem 1.5rem;
+    }
+
+    span.fa-fw {
+      position: relative;
+      left: 0;
+      margin-left: auto;
+      width: 5rem;
+      transition: left 0.2s;
+    }
+
+    &:hover span.fa-fw {
+      left: 0.6rem;
+    }
   }
 
   // {{< linkcardgrid >}}

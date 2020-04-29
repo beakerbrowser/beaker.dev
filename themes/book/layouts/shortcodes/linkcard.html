@@ -6,6 +6,11 @@
   {{ $ref = relref $ . }}
 {{ end }}
 <a href="{{ $ref }}" class="linkcard">
-  <img src="{{ .Get "img" }}">
+  {{ if .Get "img" }}
+    <img src="{{ .Get "img" }}">
+  {{ end }}
   <span>{{ $.Inner }}</span>
+  {{ if .Get "icon" }}
+    <span class="fa-fw {{ .Get "icon" }}"></span>
+  {{ end }}
 </a>

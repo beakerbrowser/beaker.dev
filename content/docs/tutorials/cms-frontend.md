@@ -6,7 +6,7 @@ title: Building a CMS "Frontend"
 
 In this tutorial, we're going to use a "Frontend" to create a consistent UI on every page. Before we start, [read this documentation on Frontends](https://beaker-browser.gitbook.io/docs/developers/frontends-.ui-folder) to learn the highlevel mechanics we'll be using.
 
-![](/tutorials/cms-frontend.gif)
+{{< niceimg img="/tutorials/cms-frontend.gif" >}}
 
 On load, our Frontend will automatically create a UI with the editor tools on the left. It will then attempt to read the file that corresponds to the current URL. If the file is found, it will insert it into the UI.
 

@@ -4,14 +4,10 @@ title: Tutorials
 
 Learn how to build apps in Beaker.
 
-{{< hint info >}}
-Tutorials will help you learn Beaker's APIs and patterns.
-{{< /hint >}}
-
-{{< linkcard relref="./tutorials/self-modifying-site" img="/tutorials/self-modifying-site.gif" >}}
+{{< linkcard relref="./tutorials/self-modifying-site" icon="fas fa-arrow-right" >}}
   Building a Self-Modifying Site
 {{< /linkcard >}}
 
-{{< linkcard relref="./tutorials/cms-frontend" img="/tutorials/cms-frontend.gif" >}}
+{{< linkcard relref="./tutorials/cms-frontend" icon="fas fa-arrow-right" >}}
   Building a CMS "Frontend"
 {{< /linkcard >}}

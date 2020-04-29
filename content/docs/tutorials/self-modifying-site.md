@@ -4,7 +4,7 @@ title: Building a Self-Modifying Site
 
 In this tutorial, we're going to step through a basic "Self-modifying Website." It will use Javascript to display a GUI for editing the content of the page.
 
-![](/tutorials/self-modifying-site.gif)
+{{< niceimg img="/tutorials/self-modifying-site.gif" >}}
 
 ## Create the index.html
 
