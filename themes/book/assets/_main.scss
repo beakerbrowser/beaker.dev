@@ -306,9 +306,8 @@ aside nav,
   aside nav {
     padding-top: 1.5rem;
 
-    ul li {
-      margin: 1rem 0.5rem 1rem 0.25rem;
-      white-space: nowrap;
+    ul {
+      display: none;
     }
   }
 }

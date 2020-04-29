@@ -138,6 +138,10 @@
       object-fit: cover;
       object-position: top;
       border-right: 1px solid $gray-300;
+
+      @media (max-width: 530px) {
+        display: none;
+      }
     }
 
     span {
@@ -146,6 +150,12 @@
       letter-spacing: 1px;
       color: #000;
       padding: 0.9rem 1.5rem;
+
+      &:not(.fa-fw) {
+        @media (max-width: 530px) {
+          font-weight: normal;
+        }
+      }
     }
 
     span.fa-fw {
