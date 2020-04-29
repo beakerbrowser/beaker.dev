@@ -207,8 +207,13 @@ button.create-drive:hover {
 }
 
 #add-link-dialog {
+  display: none;
   border: 1px solid $gray-700;
   padding: 1.3rem;
+
+  &[open] {
+    display: block;
+  }
 
   form {
     width: 500px;

@@ -9,7 +9,7 @@ title: Chat Room Template
 
 <script>
   const TEMPLATE_ROOT = '/templates/chat-room'
-  const TEMPLATE_TITLE = 'Chat Room'
+  const TEMPLATE_TITLE = 'My Chat Room'
   window.TEMPLATE_FILES = [
     '/index.html'
   ]
