@@ -3,7 +3,7 @@ const BUILTIN_LINKS = [
   // templates
   {
     title: 'Simple CMS',
-    description: 'An example content-management system for building a site',
+    description: 'An example content management system for building a site',
     href: '/docs/templates/simple-cms/',
     type: 'templates',
     author: THIS_AUTHOR
@@ -24,21 +24,21 @@ const BUILTIN_LINKS = [
   },
   {
     title: 'Photo Album',
-    description: 'A simple photo-album site with management tools',
+    description: 'A simple photo album site with management tools',
     href: '/docs/templates/photo-album/',
     type: 'templates',
     author: THIS_AUTHOR
   },
   {
     title: 'Chat Room',
-    description: 'An example chat-room using peersockets',
+    description: 'An example chat room using peersockets',
     href: '/docs/templates/chat-room/',
     type: 'templates',
     author: THIS_AUTHOR
   },
   {
     title: 'Video Chat',
-    description: 'An example video-chat using peersockets and webrtc',
+    description: 'An example video chat using peersockets and WebRTC',
     href: '/docs/templates/video-chat/',
     type: 'templates',
     author: THIS_AUTHOR

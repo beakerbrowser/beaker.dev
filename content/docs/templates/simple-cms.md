@@ -20,7 +20,7 @@ title: Simple CMS Template
 <script src="/templates/index.js"></script>
 {{< /rawhtml >}}
 
-This template is a minimal content-management system for building a site. [Read the tutorial "Building a CMS Frontend"]({{< relref "/docs/tutorials/cms-frontend" >}}) to learn how it works.
+This template is a minimal content management system for building a site. [Read the tutorial "Building a CMS Frontend"]({{< relref "/docs/tutorials/cms-frontend" >}}) to learn how it works.
 
 ## Source
 

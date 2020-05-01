@@ -4,7 +4,7 @@ title: Building a CMS "Frontend"
 
 [In the self-modifying site tutorial](../self-modifying-site), we created a simple self-modifying site. While it worked, it didn't have any way to automatically include the editing tools on every page.
 
-In this tutorial, we're going to use a "Frontend" to create a consistent UI on every page. Before we start, [read this documentation on Frontends](https://beaker-browser.gitbook.io/docs/developers/frontends-.ui-folder) to learn the highlevel mechanics we'll be using.
+In this tutorial, we're going to use a "Frontend" to create a consistent UI on every page. Before we start, [read this documentation on Frontends](https://beaker-browser.gitbook.io/docs/developers/frontends-.ui-folder) to learn the high-level mechanics we'll be using.
 
 {{< niceimg img="/tutorials/cms-frontend.gif" >}}
 
@@ -14,10 +14,10 @@ On load, our Frontend will automatically create a UI with the editor tools on th
 
 Every frontend is located at `/.ui/ui.html`. If that file is present, it will be served instead of the target resource.
 
-Our ui.html is going to include the full UI for our edit-mode and view-mode.
+Our ui.html is going to include the full UI for our edit mode and view mode.
 
 ```html
-<!doctype html5>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -99,7 +99,7 @@ body > nav hr {
 
 ## Setup the UI Behaviors
 
-First let's add the code to switch between our UI modes. We'll use a couple helpers to make things easier to read.
+First, let's add the code to switch between our UI modes. We'll use a couple of helpers to make things easier to read.
 
 ```javascript
 const $ = (sel, parent = document) => parent.querySelector(sel)
@@ -154,7 +154,7 @@ var pathname = location.pathname
 if (pathname.endsWith('/')) pathname += 'index.html'
 ```
 
-Our UI code already uses a `readPage()` method to fetch the current page's content. This is defined using the [readFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-readfile-url-opts) method of Hyperdrive.
+Our UI code already uses a `readPage()` method to fetch the current page's content. This is defined using the [readFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-readfile-url-opts) method of the Hyperdrive API.
 
 ```javascript
 async function readPage () {
@@ -162,7 +162,7 @@ async function readPage () {
 }
 ```
 
-To save the page, we get the editor's value and then write it using the [writeFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-writefile-url-data-opts) method. Afterwards we reload the page to show the changes.
+To save the page, we get the editor's value and then write it using the [writeFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-writefile-url-data-opts) method. Afterwards, we reload the page to show the changes.
 
 ```javascript
 async function onSave (e) {
@@ -178,6 +178,7 @@ async function onNew (e) {
   var path = prompt('Enter the name of your new page')
   if (!path) return
   if (!path.endsWith('.html')) path += '.html'
+  if (!path.startsWith('/')) path = `/${path}`
   await beaker.hyperdrive.writeFile(path, `<h1>${path}</h1>`)
   location.pathname = path
 }
@@ -214,6 +215,7 @@ async function onNew (e) {
   var path = prompt('Enter the name of your new page')
   if (!path) return
   if (!path.endsWith('.html')) path += '.html'
+  if (!path.startsWith('/')) path = `/${path}`
   await beaker.hyperdrive.writeFile(path, `<h1>${path}</h1>`)
   location.pathname = path
 }
@@ -262,7 +264,7 @@ setup()
 
 {{< tab "/.ui/ui.html" >}}
 ```html
-<!doctype html5>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
