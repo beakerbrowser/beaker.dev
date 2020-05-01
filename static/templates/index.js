@@ -18,7 +18,7 @@ if (typeof beaker !== 'undefined' && typeof beaker.hyperdrive !== 'undefined') {
     window.open(drive.url)
   })
 } else {
-  createDriveButton.textContent = 'Get Beaker v0.9+ to Create This Site'
+  createDriveButton.textContent = 'Get Beaker v0.9+ to Create this Site'
   createDriveButton.addEventListener('click', e => {
     window.open('https://beakerbrowser.com/')
   })

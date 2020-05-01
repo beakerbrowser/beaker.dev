@@ -2,7 +2,7 @@
 title: Building a Self-Modifying Site
 ---
 
-In this tutorial, we're going to step through a basic "Self-modifying Website." It will use Javascript to display a GUI for editing the content of the page.
+In this tutorial, we're going to step through a basic "Self-modifying Website." It will use JavaScript to display a GUI for editing the content of the page.
 
 {{< niceimg img="/tutorials/self-modifying-site.gif" >}}
 
@@ -11,7 +11,7 @@ In this tutorial, we're going to step through a basic "Self-modifying Website." 
 The entry-point to the site, index.html, is a simple scaffold that imports our styles and scripts.
 
 ```html
-<!doctype html5>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -196,7 +196,7 @@ document.body.append(editBtn)
 {{< /tab >}}
 {{< tab "index.html" >}}
 ```html
-<!doctype html5>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
