@@ -13,8 +13,7 @@ title: Multi-user Wiki Template
   window.TEMPLATE_FILES = [
     '/ui/ui.html',
     '/ui/ui.js',
-    '/ui/util.js',
-    '/ui/markdown-it.js'
+    '/ui/util.js'
   ]
 </script>
 <script src="/templates/index.js"></script>

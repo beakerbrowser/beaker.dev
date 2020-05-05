@@ -13,7 +13,7 @@ title: Microblog Feed Template
   window.TEMPLATE_FILES = [
     '/index.html',
     '/index.js',
-    '/markdown-it.js'
+    '/index.css'
   ]
 </script>
 <script src="/templates/index.js"></script>

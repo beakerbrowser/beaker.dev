@@ -10,14 +10,34 @@
     <style>
       body {
         margin: 20px;
+        font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      h1 {
+        font-weight: 500;
+      }
+      input, #output {
+        font-size: 14px;
+        letter-spacing: 0.7px;
+        padding: 12px;
+        border: 1px solid #ccd;
       }
       input {
-        width: 500px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: 0;
+        border-bottom: 0;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
       }
       #output {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
         white-space: pre;
-        padding: 10px;
-        font-family: monospace;
+        background: #f3f3f8;
+        line-height: 1.4;
+      }
+      #output strong {
+        font-weight: 500;
       }
     </style>
     <script>

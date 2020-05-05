@@ -55,9 +55,10 @@
 
 .template-thumb {
   display: block;
-  width: 400px;
+  width: 100%;
   margin: 2rem 0 1rem;
-  border: 1px solid $gray-400;
+  border-radius: 4px;
+  border: 1px solid $gray-600;
 }
 
 button.create-drive {
@@ -65,10 +66,10 @@ button.create-drive {
   color: #fff;
   border: 0;
   background: $color-link;
-  box-shadow: 0 1px 2px #0004;
+  box-shadow: 0 0 0 #0004;
   border-radius: 4px;
-  padding: 8px 0;
-  margin: 0 0 1rem;
+  padding: 12px 0;
+  margin: 0 auto 1rem;
   width: 400px;
   max-width: 100%;
   text-align: center;

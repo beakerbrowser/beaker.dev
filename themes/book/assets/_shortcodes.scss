@@ -133,8 +133,7 @@
     }
 
     img {
-      width: 200px;
-      height: 100px;
+      width: 300px;
       object-fit: cover;
       object-position: top;
       border-right: 1px solid $gray-300;
@@ -168,6 +167,45 @@
 
     &:hover span.fa-fw {
       left: 0.6rem;
+    }
+  }
+
+  // {{< imgcard >}}
+  .imgcard {
+    display: flex;
+    align-items: center;
+    border: 1px solid $gray-400;
+    margin-bottom: 1rem;
+    color: $color-link;
+
+    &:hover {
+      text-decoration: none;
+      background: $gray-100;
+    }
+
+    img {
+      width: 500px;
+      object-fit: cover;
+      object-position: top;
+      border-right: 1px solid $gray-300;
+
+      @media (max-width: 530px) {
+        display: none;
+      }
+    }
+
+    span.fa-fw {
+      position: relative;
+      left: -20px;
+      margin-left: auto;
+      width: 5rem;
+      transition: left .2s;
+      font-size: 30px;
+      color: #ccd;
+    }
+
+    &:hover span.fa-fw {
+      left: -10px;
     }
   }
 
