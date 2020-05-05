@@ -1,9 +1,11 @@
 
 {{ define "main" }}
 
-<div class="title-banner">
+<div class="title-banner home">
   <div class="content-container">
-    {{ .Content }}
+    <div class="markdown">
+      {{ .Content }}
+    </div>
 
     <div class="book-columns flex flex-wrap colorful">
       
@@ -26,45 +28,25 @@
   </div>
 </div>
 
-<div class="links-directory">
+<div class="main-body">
   <div class="content-container">
-    <div class="links-directory-ctrls">
-      <input placeholder="Search">
-      <button class="hidden">Add Link</button>
-    </div>
-    <div class="links-directory-main">
-      <div class="links-directory-nav"></div>
-      <div class="links-directory-results"></div>
-    </div>
+    <h2>Latest News</h2>
+
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+    <article class="markdown book-post">
+      <h3 class="post-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      {{ partial "docs/post-meta" . }}
+      <p>
+        {{- .Summary -}}
+        {{ if .Truncated }}
+          <a href="{{ .RelPermalink }}">...</a>
+        {{ end }}
+      </p>
+    </article>
+    {{ end }}
+
   </div>
 </div>
-<script type="module" src="/links-directory.js"></script>
-
-<dialog id="add-link-dialog">
-  <form method="dialog">
-    <h2>Share a link</h2>
-    <div class="form-group">
-      <label>Title</label>
-      <input type="text" name="title" required>
-    </div>
-    <div class="form-group">
-      <label>Description</label>
-      <input type="text" name="description">
-    </div>
-    <div class="form-group">
-      <label>URL</label>
-      <input type="text" name="href" required>
-    </div>
-    <div class="form-group">
-      <label>Category</label>
-      <select name="category" required>
-        <option disabled selected value>-- Select a category --</option>
-      </select>
-    </div>
-    <div class="form-actions">
-      <button>Cancel</button>
-      <button type="submit">Share</button>
-    </div>
-  </form>
-</dialog>
 {{ end }}
