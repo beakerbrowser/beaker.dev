@@ -1,6 +1,6 @@
 var createDriveButton = document.querySelector('.create-drive')
 if (typeof beaker !== 'undefined' && typeof beaker.hyperdrive !== 'undefined') {
-  createDriveButton.textContent = 'Create Drive from this Template'
+  createDriveButton.textContent = 'Create Drive From This Template'
   createDriveButton.addEventListener('click', async (e) => {
     var drive = await beaker.hyperdrive.createDrive({
       title: TEMPLATE_TITLE
@@ -18,7 +18,7 @@ if (typeof beaker !== 'undefined' && typeof beaker.hyperdrive !== 'undefined') {
     window.open(drive.url)
   })
 } else {
-  createDriveButton.textContent = 'Get Beaker v0.9+ to Create this Site'
+  createDriveButton.textContent = 'Get Beaker 1.0 Beta to Create This Site'
   createDriveButton.addEventListener('click', e => {
     window.open('https://beakerbrowser.com/')
   })

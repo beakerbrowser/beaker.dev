@@ -5,7 +5,7 @@ title: Photo Album Template
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/photo-album.png">
 
-<button class="create-drive">Create Drive from Template</button>
+<button class="create-drive">Create Drive From This Template</button>
 
 <script>
   const TEMPLATE_ROOT = '/templates/photo-album'
@@ -19,7 +19,7 @@ title: Photo Album Template
 <script src="/templates/index.js"></script>
 {{< /rawhtml >}}
 
-This template creates a simple photo album. It includes controls for the site-owner to add, edit, and remove photos.
+This template creates a simple photo album. It includes controls for the site owner to add, edit, and remove photos.
 
 ## Source
 

@@ -79,7 +79,7 @@ Finally, the textarea is positioned to take up the rest of the screen:
 
 Our editor needs to read the HTML of the current page and then write the textarea's value back to that file. To do that, we'll use the [beaker.hyperdrive API](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive).
 
-First we need the path for the current file. We can get this from the window.location variable's `pathname` attribute. If we are looking at a folder, we should append "index.html".
+First, we need the path for the current file. We can get this from the window.location variable's `pathname` attribute. If we are looking at a folder, we should append "index.html".
 
 ```javascript
 var pathname = location.pathname
