@@ -80,17 +80,7 @@ customElements.define('photo-album-app', class extends HTMLElement {
     }
     fr.readAsArrayBuffer(file)
   }
-
-  onRemove (photo) {
-    if (!confirm('Remove this photo?')) {
-      return
-    }
-
-    this.photos.splice(this.photos.indexOf(photo), 1)
-    // TODO save
-    this.renderPhotos()
-  }
-
+  
   async onEditInfo (e) {
     e.preventDefault()
     await beaker.shell.drivePropertiesDialog(location.toString())
