@@ -5,7 +5,7 @@ title: Multi-user Wiki Template
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/multiuser-wiki.png">
 
-<button class="create-drive">Create Drive from Template</button>
+<button class="create-drive">Create Drive From This Template</button>
 
 <script>
   const TEMPLATE_ROOT = '/templates/multiuser-wiki'

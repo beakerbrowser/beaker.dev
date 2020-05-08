@@ -147,7 +147,7 @@ async function enterViewMode () {
 
 Reading and writing the page's HTML is going to work like in the [self-modifying site tutorial](../self-modifying-site). We'll use the [Hyperdrive API](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive) to read and write the files.
 
-First we setup some globals that we'll reuse:
+First, we set up some globals that we'll reuse:
 
 ```javascript
 var pathname = location.pathname

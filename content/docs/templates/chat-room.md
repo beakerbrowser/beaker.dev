@@ -5,7 +5,7 @@ title: Chat Room Template
 {{< rawhtml >}}
 <img class="template-thumb" src="/templates/chat-room.png">
 
-<button class="create-drive">Create Drive from Template</button>
+<button class="create-drive">Create Drive From This Template</button>
 
 <script>
   const TEMPLATE_ROOT = '/templates/chat-room'
