@@ -77,7 +77,7 @@ Finally, the textarea is positioned to take up the rest of the screen:
 
 ## Reading and writing the page
 
-Our editor needs to read the HTML of the current page and then write the textarea's value back to that file. To do that, we'll use the [beaker.hyperdrive API](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive).
+Our editor needs to read the HTML of the current page and then write the textarea's value back to that file. To do that, we'll use the [beaker.hyperdrive API](https://docs.beakerbrowser.com/apis/beaker-hyperdrive).
 
 First, we need the path for the current file. We can get this from the window.location variable's `pathname` attribute. If we are looking at a folder, we should append "index.html".
 
@@ -86,7 +86,7 @@ var pathname = location.pathname
 if (pathname.endsWith('/')) pathname += 'index.html'
 ```
 
-To read the current page's HTML, we use the [readFile](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#readfile-path-opts) method.
+To read the current page's HTML, we use the [readFile](https://docs.beakerbrowser.com/apis/beaker-hyperdrive#readfile-path-opts) method.
 
 ```javascript
 async function readPage () {
@@ -94,7 +94,7 @@ async function readPage () {
 }
 ```
 
-To write the current page, we use the [writeFile](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#writefile-path-data-opts) method.
+To write the current page, we use the [writeFile](https://docs.beakerbrowser.com/apis/beaker-hyperdrive#writefile-path-data-opts) method.
 
 ```javascript
 async function savePage (value) {

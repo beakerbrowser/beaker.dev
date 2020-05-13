@@ -4,7 +4,7 @@ title: Building a CMS "Frontend"
 
 [In the self-modifying site tutorial](../self-modifying-site), we created a simple self-modifying site. While it worked, it didn't have any way to automatically include the editing tools on every page.
 
-In this tutorial, we're going to use a "Frontend" to create a consistent UI on every page. Before we start, [read this documentation on Frontends](https://beaker-browser.gitbook.io/docs/developers/frontends-.ui-folder) to learn the high-level mechanics we'll be using.
+In this tutorial, we're going to use a "Frontend" to create a consistent UI on every page. Before we start, [read this documentation on Frontends](https://docs.beakerbrowser.com/developers/frontends-.ui-folder) to learn the high-level mechanics we'll be using.
 
 {{< niceimg img="/tutorials/cms-frontend.gif" >}}
 
@@ -145,7 +145,7 @@ async function enterViewMode () {
 
 ## Add Read/Write Methods
 
-Reading and writing the page's HTML is going to work like in the [self-modifying site tutorial](../self-modifying-site). We'll use the [Hyperdrive API](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive) to read and write the files.
+Reading and writing the page's HTML is going to work like in the [self-modifying site tutorial](../self-modifying-site). We'll use the [Hyperdrive API](https://docs.beakerbrowser.com/apis/beaker-hyperdrive) to read and write the files.
 
 First, we set up some globals that we'll reuse:
 
@@ -154,7 +154,7 @@ var pathname = location.pathname
 if (pathname.endsWith('/')) pathname += 'index.html'
 ```
 
-Our UI code already uses a `readPage()` method to fetch the current page's content. This is defined using the [readFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-readfile-url-opts) method of the Hyperdrive API.
+Our UI code already uses a `readPage()` method to fetch the current page's content. This is defined using the [readFile\(\)](https://docs.beakerbrowser.com/apis/beaker-hyperdrive#beaker-hyperdrive-readfile-url-opts) method of the Hyperdrive API.
 
 ```javascript
 async function readPage () {
@@ -162,7 +162,7 @@ async function readPage () {
 }
 ```
 
-To save the page, we get the editor's value and then write it using the [writeFile\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-writefile-url-data-opts) method. Afterwards, we reload the page to show the changes.
+To save the page, we get the editor's value and then write it using the [writeFile\(\)](https://docs.beakerbrowser.com/apis/beaker-hyperdrive#beaker-hyperdrive-writefile-url-data-opts) method. Afterwards, we reload the page to show the changes.
 
 ```javascript
 async function onSave (e) {
@@ -184,7 +184,7 @@ async function onNew (e) {
 }
 ```
 
-To delete the current page, we confirm with the user and then use the [unlink\(\)](https://beaker-browser.gitbook.io/docs/apis/beaker-hyperdrive#beaker-hyperdrive-unlink-url-opts) method. When the page reloads, the view should display nothing because a 404 is handled by inserting an empty string \(see our readPage\(\) method above\).
+To delete the current page, we confirm with the user and then use the [unlink\(\)](https://docs.beakerbrowser.com/apis/beaker-hyperdrive#beaker-hyperdrive-unlink-url-opts) method. When the page reloads, the view should display nothing because a 404 is handled by inserting an empty string \(see our readPage\(\) method above\).
 
 ```javascript
 async function onDelete (e) {

@@ -13,4 +13,4 @@ headless = true
 - **[Tutorials]({{< relref "/docs/tutorials" >}})**
   - [Building a Self-Modifying Site]({{< relref "/docs/tutorials/self-modifying-site" >}})
   - [Building a CMS "Frontend"]({{< relref "/docs/tutorials/cms-frontend" >}})
-- **[API Reference](https://beaker-browser.gitbook.io/docs/#apis)**
+- **[API Reference](https://docs.beakerbrowser.com/#apis)**
