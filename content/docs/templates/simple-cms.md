@@ -37,4 +37,7 @@ This template is a minimal content management system for building a site. [Read 
 {{< tab "/.ui/ui.css" >}}
 {{< readcode "/static/templates/simple-cms/ui/ui.css" "css" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}

@@ -30,4 +30,7 @@ This template creates a minimal microblogging app. Users publish posts as files 
 {{< tab "/index.js" >}}
 {{< readcode "/static/templates/microblog-feed/index.js" "js" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}

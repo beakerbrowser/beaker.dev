@@ -33,4 +33,7 @@ This template creates a simple photo album. It includes controls for the site ow
 {{< tab "/index.css" >}}
 {{< readcode "/static/templates/photo-album/index.css" "css" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}

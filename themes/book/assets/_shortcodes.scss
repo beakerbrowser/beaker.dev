@@ -136,7 +136,6 @@
       width: 300px;
       object-fit: cover;
       object-position: top;
-      border-right: 1px solid $gray-300;
 
       @media (max-width: 530px) {
         display: none;
@@ -187,11 +186,6 @@
       width: 500px;
       object-fit: cover;
       object-position: top;
-      border-right: 1px solid $gray-300;
-
-      @media (max-width: 530px) {
-        display: none;
-      }
     }
 
     span.fa-fw {
@@ -212,12 +206,8 @@
   // {{< linkcardgrid >}}
   .linkcardgrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-
-    @media (max-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
 
     @media (max-width: 500px) {
       grid-template-columns: repeat(1, 1fr);

@@ -25,4 +25,7 @@ This template creates a minimal chat room for all the visitors of the site. It u
 {{< tab "/index.html" >}}
 {{< readcode "/static/templates/chat-room/index.html" "html" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}

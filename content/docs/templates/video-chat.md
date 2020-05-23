@@ -27,4 +27,7 @@ This template creates a minimal video chat between the visitors of the site. It 
 {{< tab "/index.html" >}}
 {{< readcode "/static/templates/video-chat/index.html" "html" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}

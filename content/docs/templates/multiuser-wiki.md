@@ -45,4 +45,7 @@ The matching file with the highest mtime is then chosen for rendering.
 {{< tab "/.ui/util.js" >}}
 {{< readcode "/static/templates/multiuser-wiki/ui/util.js" "js" >}}
 {{< /tab >}}
+{{< tab "LICENSE" >}}
+{{< readcode "/static/templates/LICENSE" "txt" >}}
+{{< /tab >}}
 {{< /tabsraw >}}
