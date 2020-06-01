@@ -5,7 +5,7 @@
 {{ with .Get "relref" }}
   {{ $ref = relref $ . }}
 {{ end }}
-<a href="{{ $ref }}" class="imgcard">
+<a href="{{ $ref }}" class="imgcard{{ with .Get "class" }} {{ . }}{{ end }}">
   {{ if .Get "img" }}
     <img src="{{ .Get "img" }}">
   {{ end }}

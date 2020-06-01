@@ -182,6 +182,11 @@
       background: $gray-100;
     }
 
+    &.centered {
+      width: 500px;
+      margin: 50px auto;
+    }
+
     img {
       width: 500px;
       object-fit: cover;
