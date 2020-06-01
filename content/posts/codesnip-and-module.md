@@ -17,7 +17,7 @@ Today we're happy to add two new templates: [Codesnip](/docs/templates/codesnip)
 {{< imgcard relref="../docs/templates/codesnip" img="/templates/codesnip.png" class="centered" >}}
 {{< /imgcard >}}
 
-"Codesnips" are a common tool among Web developers to share example code, often to demostrate APIs, patterns, or techniques. [Codepen](https://codepen.io/) and [JsFiddle](https://jsfiddle.net/) are two well-known services for these kinds of snippets. We're happy to say, with Codesnips you now have a `hyper://` solution.
+"Codesnips" are a common tool among Web developers to share example code, often to demonstrate APIs, patterns, or techniques. [Codepen](https://codepen.io/) and [JsFiddle](https://jsfiddle.net/) are two well-known services for these kinds of snippets. We're happy to say, with Codesnips you now have a `hyper://` solution.
 
 [Try it now &raquo;](/docs/templates/codesnip)
 
