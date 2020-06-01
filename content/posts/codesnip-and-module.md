@@ -2,7 +2,7 @@
 categories:
 - Announcements
 date: "2020-06-01"
-description: These should make some coders happy.
+description: The Beaker Developer Portal has added a couple new templates for quickly creating code-focused Hyperdrives.
 title: "Two new templates: Codesnip and Module"
 ---
 
