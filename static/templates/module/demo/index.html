@@ -1,0 +1,8 @@
+<h1>Demo</h1>
+<div id="demo-container"></div>
+<script type="module">
+  import * as myModule from '../index.js'
+  document.getElementById('demo-container').innerHTML = `
+    <h2><code>hello('friends') => '${myModule.hello('friends')}'</code></h2>
+  `
+</script>

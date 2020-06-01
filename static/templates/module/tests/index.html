@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="./vendor/mocha.css" />
+<script src="./vendor/chai.js"></script>
+<script src="./vendor/mocha.js"></script>
+<div id="mocha"></div>
+<script>
+  mocha.setup('bdd')
+  mocha.checkLeaks()
+</script>
+<script type="module" src="./index.js"></script>
+<script>
+  mocha.run()
+</script>

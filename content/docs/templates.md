@@ -21,4 +21,7 @@ Templates are a quick way to start with new apps and projects.
 {{< imgcard relref="./templates/codesnip" img="/templates/codesnip.png" >}}
 {{< /imgcard >}}
 
+{{< imgcard relref="./templates/module" img="/templates/module.png" >}}
+{{< /imgcard >}}
+
 {{< /linkcardgrid >}}
