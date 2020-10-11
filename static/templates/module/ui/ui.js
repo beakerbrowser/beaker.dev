@@ -121,7 +121,7 @@ class ModuleFileView extends HTMLElement {
     }
 
     // embed content
-    if (/\.(png|jpe?g|gif)$/i.test(pathname)) {
+    if (/\.(a?png|jpe?g|gif|webp|svg)$/i.test(pathname)) {
       this.append(h('img', {src: pathname}))
     } else if (/\.(mp4|webm|mov)/i.test(pathname)) {
       this.append(h('video', {controls: true}, h('source', {src: pathname})))
