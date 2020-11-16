@@ -49,6 +49,10 @@ button img {
   width: 16px;
 }
 
+img {
+  max-width: 100%;
+}
+
 nav {
   background: var(--light-gray);
 }
