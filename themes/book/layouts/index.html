@@ -14,13 +14,8 @@
         <span class="fas fa-arrow-right"></span>
       </a>
       
-      <a href="/docs/tutorials" class="flex-even markdown-inner">
-        <span class="title">Tutorials</span>
-        <span class="fas fa-arrow-right"></span>
-      </a>
-      
-      <a href="https://docs.beakerbrowser.com/#apis" class="flex-even markdown-inner">
-        <span class="title">API Reference</span>
+      <a href="https://docs.beakerbrowser.com/" class="flex-even markdown-inner">
+        <span class="title">Beaker Documentation</span>
         <span class="fas fa-arrow-right"></span>
       </a>
       
@@ -30,8 +25,6 @@
 
 <div class="main-body">
   <div class="content-container">
-    <h2>Latest News</h2>
-
     {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
     <article class="markdown book-post">
       <h3 class="post-title">
